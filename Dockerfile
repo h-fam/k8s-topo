@@ -4,7 +4,7 @@ RUN mkdir -p /k8s-topo
 WORKDIR /k8s-topo
 COPY requirements.txt .
 
-RUN apk add --no-cache python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq && \
+RUN apk add --no-cache cargo python3 build-base python3-dev openssl-dev libffi-dev libstdc++ nginx curl jq && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \

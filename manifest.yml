@@ -86,7 +86,7 @@ items:
         hostNetwork: true
         containers:
         - image: networkop/k8s-topo:0.2.0
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           name: k8s-topo
           ports:
           - containerPort: 80
