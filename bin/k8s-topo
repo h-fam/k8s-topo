@@ -613,7 +613,7 @@ class CEOS(Device):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.image = CEOS_IMAGE
-        self.command = ["/sbin/init"]
+        self.command = ["/sbin/init", "systemd.setenv=INTFTYPE=eth", "systemd.setenv=ETBA=1", "systemd.setenv=SKIP_ZEROTOUCH_BARRIER_IN_S
         self.type = "ceos"
         # Extracing image tag
         ceos_version = self.image.split("/")[-1].split(":")[-1]
